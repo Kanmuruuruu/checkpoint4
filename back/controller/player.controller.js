@@ -11,6 +11,23 @@ exports.findAll = (request, response) => {
   });
 };
 
+exports.findById = (request, response) => {
+  const id = request.params.playerId;
+  return Player.findById(id, (error,data) => {
+    if (error) {
+      if (error.kind === 'not_found') {
+        return response.status(404).send({
+          message: `Not found Player with id ${id}.`
+        });
+      }
+      return response.status(500).send({
+        message: `Could not delete Player with id ${id}`
+      });
+    }
+    return response.status(200).send(data);
+  });
+};
+
 exports.create = (request, response) => {
   if (!request.body) {
     return response.status(400).send({
@@ -65,3 +82,5 @@ exports.delete = (request, response) => {
     return response.send({ message: `Player was deleted successfully!` });
   });
 };
+
+

@@ -19,6 +19,21 @@ Player.findAll = result => {
   });
 };
 
+Player.findById = (id, result) => {
+  db.query('SELECT * FROM player WHERE id=?', id, (error, dbResult) => {
+    if (error) {
+      return result(error, null);
+    }
+
+    if (dbResult.affectedRows === 0) {
+      // Not found Player with the id
+      return result({ kind: 'not_found' }, null);
+    }
+
+    return result(null, dbResult);
+  });
+};
+
 Player.create = (player, result) => {
   db.query('INSERT INTO player SET ?', player,(error, dbResult) => {
     if (error) {
