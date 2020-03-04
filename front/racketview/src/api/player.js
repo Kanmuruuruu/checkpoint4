@@ -25,9 +25,25 @@ export const postPlayer = async newPlayer => {
       },
       body: JSON.stringify(newPlayer)
     });
-    if(response.ok) return await response.json();
-    return 'error';
+    if (response.ok) return await response.json();
+    return "error";
   } catch (error) {
-    return 'error';
+    return "error";
+  }
+};
+
+export const deletePlayer = async playerId => {
+  try {
+    const response = await fetch(`${host}/api/player/${playerId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        "Access-Control-Allow-Origin": serverView
+      }
+    });
+    if (response.ok) return await response.json();
+    return "error";
+  } catch (error) {
+    return "error";
   }
 };

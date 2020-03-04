@@ -7,4 +7,6 @@ router.get('/', player.findAll);
 
 router.post('/', player.create);
 
+router.delete('/:playerId', player.delete);
+
 module.exports = router;

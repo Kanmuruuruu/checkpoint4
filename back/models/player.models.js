@@ -29,4 +29,19 @@ Player.create = (player, result) => {
   });
 };
 
+Player.delete = (id,result) => {
+  db.query('DELETE FROM player WHERE id = ?', id, (error, dbResult) => {
+    if (error) {
+      return result(error, null);
+    }
+
+    if (dbResult.affectedRows === 0) {
+      // Not found Player with the id
+      return result({ kind: 'not_found' }, null);
+    }
+
+    return result(null, dbResult);
+  });
+};
+
 module.exports = Player;

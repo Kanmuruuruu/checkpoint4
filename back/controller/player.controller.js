@@ -47,3 +47,21 @@ exports.create = (request, response) => {
     return response.send(data);
   });
 };
+
+
+exports.delete = (request, response) => {
+  const id = request.params.playerId;
+  return Player.delete(id, error => {
+    if (error) {
+      if (error.kind === 'not_found') {
+        return response.status(404).send({
+          message: `Not found Player with id ${id}.`
+        });
+      }
+      return response.status(500).send({
+        message: `Could not delete Player with id ${id}`
+      });
+    }
+    return response.send({ message: `Player was deleted successfully!` });
+  });
+};

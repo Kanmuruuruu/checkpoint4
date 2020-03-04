@@ -28,3 +28,13 @@
 .infos div{
     margin: auto 0;
 }
+
+.playerDelete {
+    height: 100%;
+    margin: auto 0;
+}
+
+.playerDelete img{
+    width: 32px;
+    height: 32px;
+}
