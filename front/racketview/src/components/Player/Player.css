@@ -1,0 +1,26 @@
+.player{
+    border-radius: 30px;
+    background: #f1935c;
+    min-height: 150px;
+    width: 90%;
+    min-width: 365px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+.rankPlayer{
+    margin: auto 0;
+    font-size: 3em;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+.infos div{
+    margin: auto 0;
+}
