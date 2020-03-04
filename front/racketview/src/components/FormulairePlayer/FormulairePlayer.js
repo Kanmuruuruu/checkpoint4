@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import Response from "../Response/Response";
 import "./FormulairePlayer.css";
 
 const playerApi = require("../../api/player");
 
-const FormulairePlayer = ({create}) => {
+const FormulairePlayer = ({ create }) => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [age, setAge] = useState("");
@@ -13,16 +14,30 @@ const FormulairePlayer = ({create}) => {
   const [playerDouble_id, setPlayerDouble_id] = useState(null);
 
   const [isRanked, setIsRanked] = useState(false);
+  const [message, setMessage] = useState({});
 
   const handleSubmit = async e => {
     e.preventDefault();
     const newPlayer = { firstname: firstname, lastname: lastname, age: age };
+    if (single && double) {
+      newPlayer["rateSingle"] = single;
+      newPlayer.rateDouble = double;
+    }
+    if (playerDouble_id) {
+      newPlayer.playerDouble_id = playerDouble_id;
+    }
     const response = await playerApi.postPlayer(newPlayer);
-    if(response !== 'error') create(response);
+    if (response !== "error") {
+      create(response);
+      setMessage({ message: "Well done Buddy", success: true });
+    } else {
+      setMessage({message: 'Something wrong', success: false})
+    }
   };
 
   return (
     <form className="formulaire" onSubmit={handleSubmit}>
+      <Response {...message}/>
       <div className="formulairePlayer">
         <label htmlFor="lastname">
           Nom
@@ -57,7 +72,9 @@ const FormulairePlayer = ({create}) => {
           />
         </label>
       </div>
-      <div className="buttonRanked" onClick={ () => setIsRanked(!isRanked)}>{isRanked ? 'Enfaite non' : 'Déjà classé?'}</div>
+      <div className="buttonRanked" onClick={() => setIsRanked(!isRanked)}>
+        {isRanked ? "Enfaite non" : "Déjà classé?"}
+      </div>
       {isRanked && (
         <div className="formulairePlayer">
           <label htmlFor="single">
@@ -70,7 +87,11 @@ const FormulairePlayer = ({create}) => {
           </label>
           <label htmlFor="double">
             Double
-            <input type="text" />
+            <input
+              type="text"
+              value={double}
+              onChange={e => setDouble(e.target.value)}
+            />
           </label>
           <label htmlFor="partner">
             Partenaire
@@ -83,7 +104,9 @@ const FormulairePlayer = ({create}) => {
           </label>
         </div>
       )}
-      <button className="buttonRanked" type="submit">Ajouter</button>
+      <button className="buttonRanked" type="submit">
+        Ajouter
+      </button>
     </form>
   );
 };

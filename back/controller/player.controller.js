@@ -18,12 +18,22 @@ exports.create = (request, response) => {
     });
   }
 
-  const { firstname, lastname, age } = request.body;
+  const {
+    firstname,
+    lastname,
+    age,
+    rateSingle,
+    rateDouble,
+    playerDouble_id
+  } = request.body;
   // Create a Address
   const player = new Player({
     firstname,
     lastname,
-    age
+    age,
+    rateSingle,
+    rateDouble,
+    playerDouble_id
   });
 
   // Save Address in the database

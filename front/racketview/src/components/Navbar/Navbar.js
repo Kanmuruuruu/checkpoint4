@@ -6,9 +6,9 @@ const Navbar = () => {
   return (
     <ul className="navbar">
       <li>
-        <NavLink className="navlink"  to="/" activeClassName="active">
+        <NavLink className="navlink"  exact to="/" activeClassName="active">
           <img
-            src={require("../../assets/streamline-icon-badminton-shuttlecock-racquet@48 x48 (1).png")}
+            src={require("../../assets/icons8-badminton-100.png")}
             alt="Raquette de badminton"
           />
         </NavLink>

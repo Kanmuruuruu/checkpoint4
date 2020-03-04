@@ -30,4 +30,7 @@ a:visited {
 }
 
 .active {
+  border-bottom: black solid 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
