@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: ghostwhite;
+  margin: 0;
+  padding: 20px 0 10px 0;
+}
+
+.navbar li {
+  list-style: none;
+  text-decoration: none;
+}
+
+.navlink {
+  font-size: 1.6em;
+  font-family: Arial, serif;
+  margin: auto;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #282c34;
+}
+
+.navlink img {
+  height: 48px;
+  width: 48px;
+  margin-top: -10px;
+}
+
+.active {
+}
