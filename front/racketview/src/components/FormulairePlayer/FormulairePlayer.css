@@ -1,0 +1,9 @@
+.formulairePlayer{
+    background-color: lightcoral;
+}
+
+
+.formulairePlayer label,
+.formulairePlayer input{
+    margin: 30px;
+}

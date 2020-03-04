@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Player from "../Player/Player";
+import FormulairePlayer from "../FormulairePlayer/FormulairePlayer";
 
 const playerApi = require("../../api/player");
 
@@ -14,6 +15,7 @@ const Home = () => {
 
   return (
     <div>
+      <FormulairePlayer />
       {allPlayer.map(
         ({ id, firstname, lastname, age, rateSingle, rateDouble }) => {
           return (
