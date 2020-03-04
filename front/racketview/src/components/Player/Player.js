@@ -17,7 +17,6 @@ const Player = ({
   const [message, setMessage] = useState(null);
 
   const deletePlayer = async () => {
-    console.log('bonjour');
     const response = await playerApi.deletePlayer(id);
     if (response !== "error") {
       setMessage({ message: "Well deleted Buddy", success: true });

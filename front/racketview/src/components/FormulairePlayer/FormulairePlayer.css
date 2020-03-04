@@ -1,9 +1,10 @@
 .formulaire{
-    background-color: lightcoral;
+    background-color: #f1935c;
 }
 
 .formulairePlayer label,
-.formulairePlayer input{
+.formulairePlayer input,
+.formulairePlayer select{
     margin: 30px 20px;
 }
 

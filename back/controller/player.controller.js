@@ -76,6 +76,27 @@ exports.create = (request, response) => {
   });
 };
 
+exports.updatePartner = (request, response) => {
+  const id = request.params.playerId;
+  if (!request.body) {
+    return response.status(400).send({
+      message: 'Content can not be empty!'
+    });
+  }
+  return Player.updatePartner(id, request.body.playerDouble_id, (error, data) => {
+    if (error) {
+      if (error.kind === 'not_found') {
+        return response.status(404).send({
+          message: `Not found Player with id ${id}.`
+        });
+      }
+      return response.status(500).send({
+        message: `Error updating Player with id ${id}`
+      });
+    }
+    return response.send(data);
+  });
+};
 
 exports.delete = (request, response) => {
   const id = request.params.playerId;
