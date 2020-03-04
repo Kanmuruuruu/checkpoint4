@@ -10,8 +10,8 @@ const FormulairePlayer = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const newPlayer = { firstname, lastname, age };
-    console.log(await playerApi.postPlayer(newPlayer));
+    const newPlayer = { firstname: firstname, lastname: lastname, age: age };
+    await playerApi.postPlayer(newPlayer);
   };
 
   return (

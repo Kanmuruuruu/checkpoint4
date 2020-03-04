@@ -19,4 +19,14 @@ Player.findAll = result => {
   });
 };
 
+Player.create = (player, result) => {
+  db.query('INSERT INTO player SET ?', player,(error, dbResult) => {
+    if (error) {
+      return result(error, null);
+    }
+
+    return result(null, { id: dbResult.insertId, ...player });
+  });
+};
+
 module.exports = Player;
