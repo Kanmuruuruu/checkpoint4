@@ -16,7 +16,6 @@ export const findAll = async () => {
 };
 
 export const postPlayer = async newPlayer => {
-  console.log(newPlayer);
   try {
     const response = await fetch(`${host}/api/player`, {
       method: "POST",
@@ -26,8 +25,9 @@ export const postPlayer = async newPlayer => {
       },
       body: JSON.stringify(newPlayer)
     });
-    return await response.json();
+    if(response.ok) return await response.json();
+    return 'error';
   } catch (error) {
-    return error;
+    return 'error';
   }
 };

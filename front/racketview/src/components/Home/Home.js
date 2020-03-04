@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Player from "../Player/Player";
-import FormulairePlayer from "../FormulairePlayer/FormulairePlayer";
+import AllRank from "../AllRank/AllRank";
 
 const playerApi = require("../../api/player");
 
 const Home = () => {
   const [allPlayer, setAllPlayer] = useState([]);
+
+  const [selectRank, setSelectRank] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -15,21 +17,25 @@ const Home = () => {
 
   return (
     <div>
-      <FormulairePlayer />
-      {allPlayer.map(
-        ({ id, firstname, lastname, age, rateSingle, rateDouble }) => {
-          return (
-            <Player
-              id={id}
-              firstname={firstname}
-              lastname={lastname}
-              age={age}
-              rateSingle={rateSingle}
-              rateDouble={rateDouble}
-            />
-          );
-        }
-      )}
+      <AllRank select={rank => setSelectRank(rank)}/>
+      <div>
+        {allPlayer
+          .filter(player => selectRank ? player.rateSingle===selectRank : player)
+          .map(
+          ({ id, firstname, lastname, age, rateSingle, rateDouble }) => {
+            return (
+              <Player
+                id={id}
+                firstname={firstname}
+                lastname={lastname}
+                age={age}
+                rateSingle={rateSingle}
+                rateDouble={rateDouble}
+              />
+            );
+          }
+        )}
+      </div>
     </div>
   );
 };

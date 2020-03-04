@@ -14,8 +14,8 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="navlink" activeClassName="active" to="/classement">
-          Liste des joueurs
+        <NavLink className="navlink" activeClassName="active" to="/ajouter-joueur">
+          Ajouter un joueur
         </NavLink>
       </li>
     </ul>

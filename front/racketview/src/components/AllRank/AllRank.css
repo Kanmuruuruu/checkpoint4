@@ -1,0 +1,11 @@
+.allRank{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #30475e;
+}
+
+.allRank div{
+    border: #f1935c solid 2px;
+    margin: 10px auto;
+    padding: 5px;
+}

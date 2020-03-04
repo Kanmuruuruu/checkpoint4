@@ -1,9 +1,26 @@
-.formulairePlayer{
+.formulaire{
     background-color: lightcoral;
 }
 
-
 .formulairePlayer label,
 .formulairePlayer input{
-    margin: 30px;
+    margin: 30px 20px;
+}
+
+.buttonRanked{
+    background-color: floralwhite;
+    color: #f1935c;
+    width: 150px;
+    margin: 20px auto;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    border: solid #f1935c 2px;
+    padding: 5px;
+}
+
+.buttonRanked:hover{
+    color: floralwhite;
+    background-color: #f1935c;
+    border: solid 2px floralwhite;
 }
