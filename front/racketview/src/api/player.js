@@ -15,6 +15,21 @@ export const findAll = async () => {
   }
 };
 
+export const findAllName = async () => {
+  try {
+    const response = await fetch(`${host}/api/player?info=name`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        "Access-Control-Allow-Origin": serverView
+      }
+    });
+    return await response.json();
+  } catch (error) {
+    return error;
+  }
+};
+
 export const postPlayer = async newPlayer => {
   try {
     const response = await fetch(`${host}/api/player`, {

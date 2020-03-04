@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Response from "../Response/Response";
 import "./FormulairePlayer.css";
+import InputPlayerDouble from "./InputPlayerDouble";
 
 const playerApi = require("../../api/player");
 
@@ -23,7 +24,7 @@ const FormulairePlayer = ({ create }) => {
       newPlayer["rateSingle"] = single;
       newPlayer.rateDouble = double;
     }
-    if (playerDouble_id) {
+    if (playerDouble_id || playerDouble_id === 0) {
       newPlayer.playerDouble_id = playerDouble_id;
     }
     const response = await playerApi.postPlayer(newPlayer);
@@ -31,13 +32,13 @@ const FormulairePlayer = ({ create }) => {
       create(response);
       setMessage({ message: "Well done Buddy", success: true });
     } else {
-      setMessage({message: 'Something wrong', success: false})
+      setMessage({ message: "Something wrong", success: false });
     }
   };
 
   return (
     <form className="formulaire" onSubmit={handleSubmit}>
-      <Response {...message}/>
+      <Response {...message} />
       <div className="formulairePlayer">
         <label htmlFor="lastname">
           Nom
@@ -93,15 +94,7 @@ const FormulairePlayer = ({ create }) => {
               onChange={e => setDouble(e.target.value)}
             />
           </label>
-          <label htmlFor="partner">
-            Partenaire
-            <input
-              type="text"
-              name="partner"
-              value={playerDouble_id}
-              onChange={e => setPlayerDouble_id(e.target.value)}
-            />
-          </label>
+          <InputPlayerDouble changePartner={id => setPlayerDouble_id(id)} />
         </div>
       )}
       <button className="buttonRanked" type="submit">
