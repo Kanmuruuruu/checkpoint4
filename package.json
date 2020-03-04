@@ -1,0 +1,24 @@
+{
+  "name": "checkpoint4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": "",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "npx lerna run start --stream",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "husky": "^4.0.10",
+    "lerna": "^3.20.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lerna run --concurrency 1 --stream precommit"
+    }
+  },
+  "dependencies": {}
+}

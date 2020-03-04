@@ -1,0 +1,7 @@
+{
+  "packages": [
+    "back",
+    "front/racketview"
+  ],
+  "version": "1.0.0"
+}
