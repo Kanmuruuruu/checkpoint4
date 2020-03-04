@@ -2,7 +2,6 @@ const express = require('express');
 require('dotenv').config();
 const bodyParser = require('body-parser');
 
-const db = require('./database');
 const port = process.env.PORT || 8000;
 const app = express();
 const cors = require('cors');
@@ -14,6 +13,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors({ origin: 'http://localhost:3000' }));
+
+const api = require('./routes');
+
+app.use('/api', api);
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
