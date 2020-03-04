@@ -14,3 +14,7 @@
 
 #### POST 
     api/player
+
+#### GET name
+    api/player?info=name
+    to get firstname and lastname of all player

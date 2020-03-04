@@ -1,6 +1,17 @@
 const Player = require("../models/player.models");
 
 exports.findAll = (request, response) => {
+  if(request.query.info === 'name'){
+    return Player.getAllName((error, data)=>{
+      if (error) {
+        return response.status(500).send({
+          message: error.message || "Some error occurred while retrieving name of all the player."
+        });
+      }
+      return response.status(200).send(data);
+    });
+  }
+
   return Player.findAll((error, data) => {
     if (error) {
       return response.status(500).send({

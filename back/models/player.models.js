@@ -34,6 +34,16 @@ Player.findById = (id, result) => {
   });
 };
 
+Player.getAllName = result => {
+  db.query('SELECT firstname, lastname FROM player', (error, dbResult) => {
+    if (error) {
+      return result(error, null);
+    }
+
+    return result(null, dbResult);
+  })
+};
+
 Player.create = (player, result) => {
   db.query('INSERT INTO player SET ?', player,(error, dbResult) => {
     if (error) {
