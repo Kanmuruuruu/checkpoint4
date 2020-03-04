@@ -9,7 +9,7 @@ router.get('/:playerId', player.findById);
 
 router.post('/', player.create);
 
-router.put('/:playerId', player.updatePartner);
+router.put('/:playerId', player.update);
 
 router.delete('/:playerId', player.delete);
 

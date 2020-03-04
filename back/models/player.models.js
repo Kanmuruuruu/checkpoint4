@@ -10,13 +10,20 @@ const Player = function(player) {
 };
 
 Player.findAll = result => {
-  db.query("SELECT * FROM player", (error, dbResult) => {
-    if (error) {
-      return result(error, null);
-    }
+  db.query(
+    "select p.*, case \n" +
+      "when p.playerDouble_id > 0 THEN (select pa.lastname from player as pa where pa.id=p.playerDouble_id)\n" +
+      "else 'null'\n" +
+      "END\n" +
+      "from player  as p;",
+    (error, dbResult) => {
+      if (error) {
+        return result(error, null);
+      }
 
-    return result(null, dbResult);
-  });
+      return result(null, dbResult);
+    }
+  );
 };
 
 Player.findById = (id, result) => {
@@ -55,26 +62,48 @@ Player.create = (player, result) => {
 };
 
 Player.updatePartner = (id, partnerId, result) => {
-    db.query(
-      "UPDATE player SET playerDouble_id=? WHERE id = ?",
-      [partnerId, id],
-      (error, response) => {
-        if (error) {
-          return result(error, null);
-        }
-
-        if (response.affectedRows === 0) {
-          // Not found Address with the id
-          return result({ kind: "not_found" }, null);
-        }
-
-        return result(null, {
-          id: id,
-          playerDouble_id: partnerId
-        });
+  db.query(
+    "UPDATE player SET playerDouble_id=? WHERE id = ?",
+    [partnerId, id],
+    (error, response) => {
+      if (error) {
+        return result(error, null);
       }
-    );
-  };
+
+      if (response.affectedRows === 0) {
+        // Not found Address with the id
+        return result({ kind: "not_found" }, null);
+      }
+
+      return result(null, {
+        id: id,
+        playerDouble_id: partnerId
+      });
+    }
+  );
+};
+
+Player.update = (id, newPlayer, result) => {
+  db.query(
+    "UPDATE player SET ? WHERE id = ?",
+    [newPlayer, id],
+    (error, response) => {
+      if (error) {
+        return result(error, null);
+      }
+
+      if (response.affectedRows === 0) {
+        // Not found Address with the id
+        return result({ kind: "not_found" }, null);
+      }
+
+      return result(null, {
+        id: id,
+        ...newPlayer
+      });
+    }
+  );
+};
 
 Player.delete = (id, result) => {
   db.query("DELETE FROM player WHERE id = ?", id, (error, dbResult) => {

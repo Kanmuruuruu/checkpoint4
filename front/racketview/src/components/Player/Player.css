@@ -1,40 +1,47 @@
-.player{
-    border-radius: 30px;
-    background: #f1935c;
-    min-height: 150px;
-    width: 90%;
-    min-width: 365px;
-    margin: 30px auto;
-    display: flex;
-    justify-content: space-around;
-    font-weight: bold;
+.player {
+  border-radius: 30px;
+  background: #f1935c;
+  min-height: 150px;
+  width: 90%;
+  min-width: 365px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
 }
 
-.player:last-child{
-    margin:0 auto;
+.player:last-child {
+  margin: 0 auto;
 }
 
-.rankPlayer{
-    margin: auto 0;
-    font-size: 3em;
+.rankPlayer,
+.partner {
+  margin: auto 0;
+  font-size: 3em;
 }
 
-.infos{
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
+.rankPlayer p,
+.partner p{
+  font-size: 12px;
+  margin: 0;
 }
 
-.infos div{
-    margin: auto 0;
+.infos {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+.infos div {
+  margin: auto 0;
 }
 
 .playerDelete {
-    height: 100%;
-    margin: auto 0;
+  height: 100%;
+  margin: auto 0;
 }
 
-.playerDelete img{
-    width: 32px;
-    height: 32px;
+.playerDelete img {
+  width: 32px;
+  height: 32px;
 }

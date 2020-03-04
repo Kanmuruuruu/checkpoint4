@@ -22,7 +22,7 @@ const Home = () => {
         {allPlayer
           .filter(player => selectRank ? player.rateSingle===selectRank : player)
           .map(
-          ({ id, firstname, lastname, age, rateSingle, rateDouble }) => {
+          ({ id, firstname, lastname, age, rateSingle, rateDouble, playerDouble_id }) => {
             return (
               <Player
                 id={id}
@@ -31,6 +31,7 @@ const Home = () => {
                 age={age}
                 rateSingle={rateSingle}
                 rateDouble={rateDouble}
+                playerDouble_id={playerDouble_id}
               />
             );
           }

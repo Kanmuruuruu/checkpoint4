@@ -34,8 +34,15 @@ const Player = ({
             <div>{capitalize(lastname)}</div>
             <div>{age}</div>
           </div>
-          <div className="rankPlayer">{rateSingle}</div>
-          <div className="rankPlayer">{rateDouble}</div>
+          <div className="rankPlayer">
+            <p>Single</p>
+            {rateSingle}
+          </div>
+          <div className="rankPlayer">
+            <p>Double</p>
+            {rateDouble}
+          </div>
+          {playerDouble_id && <div className="partner"><p>Partenaire</p> {playerDouble_id}</div>}
           <div className="playerDelete">
             <img
               src={require("../../assets/3643729-bin-delete-garbage-rubbish-trash-waste_113421.png")}

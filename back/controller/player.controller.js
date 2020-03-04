@@ -65,25 +65,36 @@ exports.create = (request, response) => {
   });
 
   // Save Address in the database
-  return Player.create(player, (error, data) => {
+  Player.create(player, (error, data) => {
     if (error) {
       return response.status(500).send({
         message:
           error.message || "Some error occurred while creating the Address."
       });
     }
+    if(playerDouble_id){
+      Player.updatePartner(playerDouble_id,data.id, (error, data) => {
+        if(error){
+          if(error.kind === 'not_found'){
+            response.status('404').send({message: 'not found this id user'});
+          }
+          response.status(500).send({message: 'Error servor'});
+        }
+      })
+    }
     return response.send(data);
   });
+
 };
 
-exports.updatePartner = (request, response) => {
+exports.update = (request, response) => {
   const id = request.params.playerId;
   if (!request.body) {
     return response.status(400).send({
       message: 'Content can not be empty!'
     });
   }
-  return Player.updatePartner(id, request.body.playerDouble_id, (error, data) => {
+  return Player.update(id, request.body, (error, data) => {
     if (error) {
       if (error.kind === 'not_found') {
         return response.status(404).send({
