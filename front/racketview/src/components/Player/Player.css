@@ -10,6 +10,10 @@
     font-weight: bold;
 }
 
+.player:last-child{
+    margin:0 auto;
+}
+
 .rankPlayer{
     margin: auto 0;
     font-size: 3em;
