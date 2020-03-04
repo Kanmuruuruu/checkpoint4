@@ -11,6 +11,22 @@ export const findAll = async () => {
     });
     return await response.json();
   } catch (error) {
-    return [];
+    return error;
+  }
+};
+
+export const postPlayer = async newPlayer => {
+  try {
+    const response = await fetch(`${host}/api/player`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Access-Control-Allow-Origin': serverView,
+        body: JSON.stringify(newPlayer)
+      }
+    });
+    return await response.json();
+  } catch (error) {
+    return error;
   }
 };
