@@ -1,0 +1,9 @@
+.messageResponse{
+    background-color: #EFEEEE;
+    margin: 10px auto;
+    width: 200px;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: #FFFFFF 6px 6px 16px,
+                #D1CDC7 -6px 0 16px;
+}

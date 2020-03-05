@@ -1,27 +1,88 @@
 .formulaire{
-    background-color: #f1935c;
+    background-color: #EFEEEE;
+    margin: 30px auto;
+    box-shadow: #FFFFFF -6px -6px 16px,
+                #D1CDC7 6px 6px 16px;
+    width: 90%;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.formulairePlayer input[type= number]{
+    -moz-appearance: textfield;
+}
+
+.formulairePlayer input::-webkit-inner-spin-button,
+.formulairePlayer input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin:0;
+}
+
+.formulairePlayer input{
+    background-color: #EFEEEE;
+    border: none;
+    padding: 5px 0;
+    color: #ff8a45;
+    text-align: center;
+    box-shadow: inset #FFFFFF -6px -6px 16px,
+                inset #D1CDC7 6px 6px 16px;
+}
+
+.formulairePlayer input:focus{
+    box-shadow: #FFFFFF -6px -6px 16px,
+                #D1CDC7 6px 6px 16px;
+}
+
+
+.formulairePlayer input[type=number]{
+    width: 60px;
+}
+
+.formulairePlayer select{
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #ff8a45;
+    padding: 10px 15px 10px 10px ;
+    max-width: 100%;
+    border: 2px solid #EFEEEE;
+    border-radius: 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #EFEEEE;
+    box-shadow: #FFFFFF -6px -6px 16px,
+                #D1CDC7 6px 6px 16px;
+}
+
+.formulairePlayer select option{
+    background-color: #EFEEEE;
 }
 
 .formulairePlayer label,
 .formulairePlayer input,
 .formulairePlayer select{
     margin: 30px 20px;
+    outline: none;
+    border-radius: 10px;
 }
 
 .buttonRanked{
-    background-color: floralwhite;
-    color: #f1935c;
+    background-color: #EFEEEE;
+    color: #ff8a45;
     width: 150px;
     margin: 20px auto;
-    border-radius: 20px;
+    border-radius: 10px;
     text-decoration: none;
     font-size: 1.3em;
-    border: solid #f1935c 2px;
     padding: 5px;
+    border: none;
+    font-weight: bold;
+    box-shadow: #FFFFFF -6px -6px 16px,
+                #D1CDC7 6px 6px 16px;
 }
 
 .buttonRanked:hover{
-    color: floralwhite;
-    background-color: #f1935c;
-    border: solid 2px floralwhite;
+    box-shadow: inset #FFFFFF -6px -6px 16px,
+                inset #D1CDC7 6px 6px 16px;
 }

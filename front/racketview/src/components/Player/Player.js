@@ -26,7 +26,7 @@ const Player = ({
   };
 
   return (
-    <div>
+    <div className="playerCard">
       {!message ? (
         <div className="player">
           <div className="infos">

@@ -18,6 +18,10 @@ const FormulairePlayer = ({ create }) => {
   const [isRanked, setIsRanked] = useState(false);
   const [message, setMessage] = useState({});
 
+  const rankedStyle = {
+    boxShadow: isRanked ? 'inset #FFFFFF -6px -6px 16px,inset #D1CDC7 6px 6px 16px': '#FFFFFF -6px -6px 16px,#D1CDC7 6px 6px 16px',
+  };
+
   const handleSubmit = async e => {
     e.preventDefault();
     const newPlayer = { firstname: firstname, lastname: lastname, age: age };
@@ -74,13 +78,13 @@ const FormulairePlayer = ({ create }) => {
           />
         </label>
       </div>
-      <div className="buttonRanked" onClick={() => setIsRanked(!isRanked)}>
+      <div className="buttonRanked" onClick={() => setIsRanked(!isRanked)} style={rankedStyle}>
         {isRanked ? "Enfaite non" : "Déjà classé?"}
       </div>
       {isRanked && (
         <div className="formulairePlayer">
-          <InputRank rank="Single" setRank={rank => setSingle(rank)} />
-          <InputRank rank="Double" setRank={rank => setDouble(rank)} />
+          <InputRank category="Single" setRank={rank => setSingle(rank)} label="Simple" />
+          <InputRank category="Double" setRank={rank => setDouble(rank)} label="Double" />
           <InputPlayerDouble changePartner={id => setPlayerDouble_id(id)} />
         </div>
       )}

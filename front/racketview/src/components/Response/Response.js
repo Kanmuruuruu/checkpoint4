@@ -1,9 +1,17 @@
-import React from 'react';
+import React from "react";
+import "./Response.css";
 
-const Response = ({ message, success}) => {
+const Response = ({ message, success }) => {
   return (
-    <div style={{ color : success ? 'green' : 'red'}}>
-      {message}
+    <div>
+    {message &&
+        <div
+          className="messageResponse"
+          style={{color: success ? "green" : "red", textTransform: success ? "normal" : "uppercase"}}
+        >
+          <p>{message}</p>
+        </div>
+    }
     </div>
   );
 };
