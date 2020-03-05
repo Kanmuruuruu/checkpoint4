@@ -7,7 +7,6 @@
   background: #EFEEEE;
   min-height: 150px;
   width: 90%;
-  min-width: 365px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -75,4 +74,23 @@
 .playerDelete img {
   width: 32px;
   height: 32px;
+}
+
+
+@media screen and (max-width: 720px){
+  .player{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 90%;
+  }
+
+  .player .rankPlayer,
+  .player .infos,
+  .player .playerDelete{
+    width: 70%;
+    margin: 10px auto;
+    font-size: 2em;
+  }
 }

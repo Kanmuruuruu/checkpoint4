@@ -23,3 +23,18 @@
     box-shadow: inset #FFFFFF -6px -6px 16px,
                 inset #D1CDC7 6px 6px 16px;
 }
+
+
+@media screen and (max-width: 720px){
+    .allRank{
+        font-size: 1em;
+        padding: 0;
+    }
+
+    .allRank div{
+        font-size: 12px;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+}

@@ -11,7 +11,6 @@
   background-color: #EFEEEE;
   margin: 0 auto;
   width: 90%;
-  min-width: 360px;
   border-radius: 20px;
   box-shadow: #FFFFFF -6px -6px 16px,
               #D1CDC7 6px 6px 16px;
@@ -37,4 +36,23 @@ a:visited {
 .active {
   box-shadow: inset #FFFFFF -6px -6px 16px,
               inset #D1CDC7 6px 6px 16px;
+}
+
+
+@media screen and (max-width: 720px){
+  .navlink{
+    font-size: 1em;
+    margin: 0;
+    padding: 10px 5px;
+  }
+
+  .navbar{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
 }
