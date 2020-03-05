@@ -16,6 +16,8 @@ const Player = ({
 }) => {
   const [message, setMessage] = useState(null);
 
+  const [showInfos, setShowInfos] = useState(true);
+
   const deletePlayer = async () => {
     const response = await playerApi.deletePlayer(id);
     if (response !== "error") {

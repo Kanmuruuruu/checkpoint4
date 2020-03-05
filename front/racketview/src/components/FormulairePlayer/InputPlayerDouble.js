@@ -17,9 +17,9 @@ const InputPlayerDouble = ({ changePartner }) => {
   };
 
   return (
-    <div>
+    <div className="inputPlayerDouble">
       <label htmlFor="partner">
-        Partenaire de Double
+        <p style={{ margin: 'auto'}}>Partenaire de Double</p>
         <select id="100" onChange={handleChange}>
           <option id="0" value={null}> </option>
           {partners
