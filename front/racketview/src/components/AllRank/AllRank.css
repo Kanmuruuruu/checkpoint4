@@ -1,11 +1,25 @@
 .allRank{
     display: flex;
     justify-content: space-evenly;
-    background-color: #30475e;
+    background-color: #EFEEEE;
+    width: 90%;
+    min-width: 360px;
+    margin: 30px auto;
+    box-shadow: #FFFFFF -6px -6px 16px,
+                #D1CDC7 6px 6px 16px;
+    border-radius: 10px;
+    padding: 10px 0;
 }
 
 .allRank div{
-    border: #f1935c solid 2px;
     margin: 10px auto;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: #FFFFFF -6px -6px 16px,
+                #D1CDC7 6px 6px 16px;
+}
+
+.allRank div:hover{
+    box-shadow: inset #FFFFFF -6px -6px 16px,
+                inset #D1CDC7 6px 6px 16px;
 }

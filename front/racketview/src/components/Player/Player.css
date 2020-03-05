@@ -1,13 +1,15 @@
 .player {
-  border-radius: 30px;
-  background: #f1935c;
+  border-radius: 20px;
+  background: #EFEEEE;
   min-height: 150px;
   width: 90%;
   min-width: 365px;
-  margin: 30px auto;
+  margin: 50px auto;
   display: flex;
   justify-content: space-around;
   font-weight: bold;
+  box-shadow: #FFFFFF -6px -6px 16px,
+              #D1CDC7 6px 6px 16px;
 }
 
 .player:last-child {
@@ -18,6 +20,16 @@
 .partner {
   margin: auto 0;
   font-size: 3em;
+  box-shadow: #FFFFFF -6px -6px 16px,
+              #D1CDC7 6px 6px 16px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.rankPlayer:hover, .partner:hover{
+  box-shadow: inset #FFFFFF -6px -6px 16px,
+              inset #D1CDC7 6px 6px 16px;
+  border-radius: 20px;
 }
 
 .rankPlayer p,
@@ -30,6 +42,11 @@
   display: flex;
   flex-direction: column;
   align-content: space-around;
+  font-size: 2.5em;
+}
+
+.infos .age{
+  font-size: 24px;
 }
 
 .infos div {
@@ -39,6 +56,16 @@
 .playerDelete {
   height: 100%;
   margin: auto 0;
+  padding: 20px;
+  box-shadow: #FFFFFF -6px -6px 16px,
+              #D1CDC7 6px 6px 16px;
+  border-radius: 20px;
+}
+
+.playerDelete:hover{
+  box-shadow: inset #FFFFFF -6px -6px 16px,
+              inset #D1CDC7 6px 6px 16px;
+  border-radius: 20px;
 }
 
 .playerDelete img {

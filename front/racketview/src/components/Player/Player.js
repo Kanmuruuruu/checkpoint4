@@ -32,10 +32,10 @@ const Player = ({
           <div className="infos">
             <div>{capitalize(firstname)}</div>
             <div>{capitalize(lastname)}</div>
-            <div>{age}</div>
+            <div className="age">{age}</div>
           </div>
           <div className="rankPlayer">
-            <p>Single</p>
+            <p>Simple</p>
             {rateSingle}
           </div>
           <div className="rankPlayer">
