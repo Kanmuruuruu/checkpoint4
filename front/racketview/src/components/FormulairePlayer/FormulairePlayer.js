@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Response from "../Response/Response";
 import "./FormulairePlayer.css";
 import InputPlayerDouble from "./InputPlayerDouble";
+import InputRank from "./InputRank";
 
 const playerApi = require("../../api/player");
 
@@ -78,22 +79,8 @@ const FormulairePlayer = ({ create }) => {
       </div>
       {isRanked && (
         <div className="formulairePlayer">
-          <label htmlFor="single">
-            Simple
-            <input
-              type="text"
-              value={single}
-              onChange={e => setSingle(e.target.value)}
-            />
-          </label>
-          <label htmlFor="double">
-            Double
-            <input
-              type="text"
-              value={double}
-              onChange={e => setDouble(e.target.value)}
-            />
-          </label>
+          <InputRank rank="Single" setRank={e => setSingle(e.target.value)} />
+          <InputRank rank="Double" setRank={e => setDouble(e.target.value)} />
           <InputPlayerDouble changePartner={id => setPlayerDouble_id(id)} />
         </div>
       )}
