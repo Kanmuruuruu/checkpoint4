@@ -67,6 +67,19 @@
     border-radius: 10px;
 }
 
+.inputPlayerDouble{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    margin: 0;
+}
+
+.inputPlayerDouble label{
+    padding: 0;
+    margin: 0;
+}
+
 .buttonRanked{
     background-color: #EFEEEE;
     color: #ff8a45;
