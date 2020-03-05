@@ -25,7 +25,7 @@ const InputPlayerDouble = ({ changePartner }) => {
           {partners
             .map(partner => {
             return (
-              <option id={partner.id} value={partner.id} style={{ backgroundColor: partner.playerDouble_id ? 'lightcoral' : 'lightblue' }}>
+              <option id={partner.id} value={partner.id}>
                 {fullName(partner.firstname, partner.lastname)}
               </option>
             );

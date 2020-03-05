@@ -79,8 +79,8 @@ const FormulairePlayer = ({ create }) => {
       </div>
       {isRanked && (
         <div className="formulairePlayer">
-          <InputRank rank="Single" setRank={e => setSingle(e.target.value)} />
-          <InputRank rank="Double" setRank={e => setDouble(e.target.value)} />
+          <InputRank rank="Single" setRank={rank => setSingle(rank)} />
+          <InputRank rank="Double" setRank={rank => setDouble(rank)} />
           <InputPlayerDouble changePartner={id => setPlayerDouble_id(id)} />
         </div>
       )}
