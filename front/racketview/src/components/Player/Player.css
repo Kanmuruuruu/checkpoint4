@@ -87,10 +87,18 @@
   }
 
   .player .rankPlayer,
-  .player .infos,
   .player .playerDelete{
     width: 70%;
     margin: 10px auto;
-    font-size: 2em;
+  }
+
+  .player .infos{
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .player .infos .age{
+    font-size: 15px;
   }
 }
