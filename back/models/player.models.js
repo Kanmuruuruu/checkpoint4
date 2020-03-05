@@ -15,7 +15,7 @@ Player.findAll = result => {
       "when p.playerDouble_id > 0 THEN (select pa.lastname from player as pa where pa.id=p.playerDouble_id)\n" +
       "else 'null'\n" +
       "END\n" +
-      "from player  as p;",
+      "from player as p;",
     (error, dbResult) => {
       if (error) {
         return result(error, null);
@@ -42,13 +42,16 @@ Player.findById = (id, result) => {
 };
 
 Player.getAllName = result => {
-  db.query("SELECT id, firstname, lastname, playerDouble_id FROM player", (error, dbResult) => {
-    if (error) {
-      return result(error, null);
-    }
+  db.query(
+    "SELECT id, firstname, lastname, playerDouble_id FROM player",
+    (error, dbResult) => {
+      if (error) {
+        return result(error, null);
+      }
 
-    return result(null, dbResult);
-  });
+      return result(null, dbResult);
+    }
+  );
 };
 
 Player.create = (player, result) => {
@@ -106,6 +109,13 @@ Player.update = (id, newPlayer, result) => {
 };
 
 Player.delete = (id, result) => {
+
+  db.query('UPDATE player SET playerDouble_id = null where playerDouble_id=?',id, (error, dbResult) => {
+    if (error) {
+      return result(error, null);
+    }
+  });
+
   db.query("DELETE FROM player WHERE id = ?", id, (error, dbResult) => {
     if (error) {
       return result(error, null);
