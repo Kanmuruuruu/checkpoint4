@@ -87,6 +87,7 @@
   }
 
   .player .rankPlayer,
+  .player .partner,
   .player .playerDelete{
     width: 70%;
     margin: 10px auto;
