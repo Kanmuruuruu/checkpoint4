@@ -10,7 +10,7 @@ const InputPlayerDouble = ({ changePartner }) => {
     (async () => {
       setPartners(await playerApi.findAllName());
     })();
-  });
+  }, []);
 
   const handleChange = e => {
     changePartner(e.target.value);
@@ -22,7 +22,9 @@ const InputPlayerDouble = ({ changePartner }) => {
         Partenaire de Double
         <select id="100" onChange={handleChange}>
           <option id="0" value={null}> </option>
-          {partners.map(partner => {
+          {partners
+            .filter(partner => !partner.playerDouble_id)
+            .map(partner => {
             return (
               <option id={partner.id} value={partner.id}>
                 {fullName(partner.firstname, partner.lastname)}

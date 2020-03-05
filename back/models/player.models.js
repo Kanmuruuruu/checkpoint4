@@ -42,7 +42,7 @@ Player.findById = (id, result) => {
 };
 
 Player.getAllName = result => {
-  db.query("SELECT id, firstname, lastname FROM player", (error, dbResult) => {
+  db.query("SELECT id, firstname, lastname, playerDouble_id FROM player", (error, dbResult) => {
     if (error) {
       return result(error, null);
     }
