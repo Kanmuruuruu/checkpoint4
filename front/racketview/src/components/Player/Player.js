@@ -37,20 +37,16 @@ const Player = ({
     display: showInfos ? "block" : "none"
   };
 
-  const styleInfos = {
-    display: showInfos ? "none" : "block"
-  };
-
   return (
     <div className="playerCard">
       {!message ? (
         <div className="player">
-          <div className="infos" onClick={handleClick} style={styleInfos}>
+          <div className="infos" onClick={handleClick}>
             <div>{capitalize(firstname)}</div>
             <div>{capitalize(lastname)}</div>
             <div className="age">{age} ans</div>
           </div>
-          <div className="rankPlayer" style={styleInfosRank} onClick={handleClick}>
+          <div className="rankPlayer" style={styleInfosRank}>
             <p>Simple</p>
             {rateSingle}
           </div>

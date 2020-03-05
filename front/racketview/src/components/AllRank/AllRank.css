@@ -1,40 +1,41 @@
-.allRank{
-    display: flex;
-    justify-content: space-evenly;
+.allRank {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #efeeee;
+  width: 90%;
+  min-width: 360px;
+  margin: 30px auto;
+  box-shadow: #ffffff -6px -6px 16px, #d1cdc7 6px 6px 16px;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.allRank div {
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: #ffffff -6px -6px 16px, #d1cdc7 6px 6px 16px;
+}
+
+.allRank div:hover {
+  box-shadow: inset #ffffff -6px -6px 16px, inset #d1cdc7 6px 6px 16px;
+}
+
+.allRank .selected {
     background-color: #EFEEEE;
-    width: 90%;
-    min-width: 360px;
-    margin: 30px auto;
-    box-shadow: #FFFFFF -6px -6px 16px,
-                #D1CDC7 6px 6px 16px;
-    border-radius: 10px;
-    padding: 10px 0;
+    box-shadow: none;
 }
 
-.allRank div{
-    margin: 10px auto;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: #FFFFFF -6px -6px 16px,
-                #D1CDC7 6px 6px 16px;
-}
+@media screen and (max-width: 720px) {
+  .allRank {
+    font-size: 1em;
+    padding: 0;
+  }
 
-.allRank div:hover{
-    box-shadow: inset #FFFFFF -6px -6px 16px,
-                inset #D1CDC7 6px 6px 16px;
-}
-
-
-@media screen and (max-width: 720px){
-    .allRank{
-        font-size: 1em;
-        padding: 0;
-    }
-
-    .allRank div{
-        font-size: 12px;
-        padding: 0;
-        border: none;
-        box-shadow: none;
-    }
+  .allRank div {
+    font-size: 12px;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
 }

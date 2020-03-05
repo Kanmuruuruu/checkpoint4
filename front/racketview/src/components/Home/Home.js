@@ -17,25 +17,35 @@ const Home = () => {
 
   return (
     <div>
-      <AllRank select={rank => setSelectRank(rank)}/>
+      <AllRank select={rank => setSelectRank(rank)} selected={selectRank} />
       <div>
         {allPlayer
-          .filter(player => selectRank ? player.rateSingle===selectRank : player)
+          .filter(player =>
+            selectRank ? player.rateSingle === selectRank : player
+          )
           .map(
-          ({ id, firstname, lastname, age, rateSingle, rateDouble, playerDouble_id }) => {
-            return (
-              <Player
-                id={id}
-                firstname={firstname}
-                lastname={lastname}
-                age={age}
-                rateSingle={rateSingle}
-                rateDouble={rateDouble}
-                playerDouble_id={playerDouble_id}
-              />
-            );
-          }
-        )}
+            ({
+              id,
+              firstname,
+              lastname,
+              age,
+              rateSingle,
+              rateDouble,
+              playerDouble_id
+            }) => {
+              return (
+                <Player
+                  id={id}
+                  firstname={firstname}
+                  lastname={lastname}
+                  age={age}
+                  rateSingle={rateSingle}
+                  rateDouble={rateDouble}
+                  playerDouble_id={playerDouble_id}
+                />
+              );
+            }
+          )}
       </div>
     </div>
   );
