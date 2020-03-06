@@ -15,6 +15,7 @@
   padding: 10px;
   border-radius: 10px;
   box-shadow: #ffffff -6px -6px 16px, #d1cdc7 6px 6px 16px;
+  font-weight: bold;
 }
 
 .allRank div:hover {

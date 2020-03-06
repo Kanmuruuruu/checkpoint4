@@ -4,7 +4,6 @@ import "./AllRank.css";
 const config = require("../../config");
 
 const AllRank = ({ select, selected }) => {
-  console.log(selected);
   return (
     <div className="allRank">
       {config.allRank.map(rank => (

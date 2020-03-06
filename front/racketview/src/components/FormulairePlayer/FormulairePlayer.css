@@ -8,6 +8,11 @@
     font-weight: bold;
 }
 
+.formulairePlayer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .formulairePlayer input[type= number]{
     -moz-appearance: textfield;
 }
@@ -62,7 +67,7 @@
 .formulairePlayer label,
 .formulairePlayer input,
 .formulairePlayer select{
-    margin: 30px 20px;
+    margin: 30px 20px 10px 20px;
     outline: none;
     border-radius: 10px;
 }
@@ -98,6 +103,20 @@
 .buttonRanked:hover{
     box-shadow: inset #FFFFFF -6px -6px 16px,
                 inset #D1CDC7 6px 6px 16px;
+}
+
+.rankedInfos{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.formulairePlayer .inputPlayerDouble label{
+    display: flex;
+}
+
+.formulairePlayer .inputPlayerDouble label p{
+    margin: 0;
+    padding: 0;
 }
 
 @media screen and (max-width: 720px){
