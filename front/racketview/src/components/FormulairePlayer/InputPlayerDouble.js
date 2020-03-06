@@ -23,6 +23,7 @@ const InputPlayerDouble = ({ changePartner }) => {
         <select id="100" onChange={handleChange}>
           <option id="0" value={null}> </option>
           {partners
+            .filter(partner => !partner.playerDouble_id)
             .map(partner => {
             return (
               <option id={partner.id} value={partner.id}>
